@@ -11,6 +11,13 @@ public class PointerController : MonoBehaviour
     private Vector3 offset;
     public Transform toDrag;
     Vector3 rayStart;
+
+    private BetsController betsController;
+
+    private void Start()
+    {
+        betsController = GetComponent<BetsController>();
+    }
     void Update()
     {
         
@@ -57,9 +64,9 @@ public class PointerController : MonoBehaviour
         RaycastHit hit;
 
         rayStart = new Vector3(toDrag.position.x + 0.7f, toDrag.position.y + 0.7f, toDrag.position.z);
-        if (Physics.Raycast(rayStart, Vector3.forward, out hit))
+        if (Physics.Raycast(rayStart, Vector3.forward, out hit) && (hit.collider.tag == "Slot"))
         {
-           //TODO place and register bet
+            betsController.PlaceBet(toDrag.gameObject, hit.collider.gameObject);
         }
         
     }

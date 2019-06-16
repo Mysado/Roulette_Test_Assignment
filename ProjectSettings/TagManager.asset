@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Draggable
   - Slot
+  - Used
   layers:
   - Default
   - TransparentFX

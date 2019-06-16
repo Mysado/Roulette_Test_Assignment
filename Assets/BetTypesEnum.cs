@@ -13,18 +13,12 @@ public enum BetType
     Trio,
     First_Four
 }
-public class BetTypesEnum : MonoBehaviour
-{
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+public static class BetTypesEnum
+{
+    public static float single = 36;
+    public static float Split = 17;
+
+
 }
